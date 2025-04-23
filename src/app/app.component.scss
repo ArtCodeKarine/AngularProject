@@ -7,5 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: mat.m2-get-color-from-palette(mat.m2-define-palette($mat-angular-project-custom, B1100));
+  background-color: mat.m2-get-color-from-palette(
+    mat.m2-define-palette($mat-angular-project-custom, B1100)
+  );
 }
