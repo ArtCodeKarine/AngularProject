@@ -1,0 +1,11 @@
+<div class="app-content">
+  <div class="app-content-container" id="app-content-container">
+    @defer {
+      <router-outlet />
+    } @placeholder (minimum 800ms) {
+      <div class="app-content-spinner">
+        <mat-spinner />
+      </div>
+    }
+  </div>
+</div>

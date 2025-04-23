@@ -1,0 +1,65 @@
+@use '@angular/material' as mat;
+
+// Définir une palette de couleurs personnalisée
+$mat-angular-project-custom: (
+  100: #000000,
+  500: #ffffff,
+  520: #eeeded,
+  700: #888888,
+  B100: #415892,
+  B200: #8b88cf,
+  B300: #f69c49,
+  B390: #da7312,
+  B320: #ebd7c5,
+  B400: #585858,
+  B500: #7bb9fc,
+  B600: #cdcdcd,
+  B700: #416b92,
+  B800: #d66767,
+  B820: #e5cfcf,
+  B850: #ac5353,
+  B900: #7e7e7e,
+  B1000: #7c9cfa,
+  B1100: #c9d8e9,
+  B2100: #ce2029,
+  B2200: #fa5d16,
+  B2300: #ff9d2c,
+  B2400: #ffdc2e,
+  B2500: #b9dd36,
+  B2510: #c7e84a,
+  B2550: #f3fa89,
+  B2570: #f3f8b5,
+  B2600: #66ae1e,
+  contrast: (
+    B100: #ffffff,
+    B200: #ffffff,
+    B300: #ffffff,
+    B400: #ffffff,
+    B500: #ffffff,
+    B600: #ffffff,
+    B700: #ffffff,
+  ),
+);
+
+// Définir les palettes à partir de la palette personnalisée
+$angular-project-primary: mat.m2-define-palette($mat-angular-project-custom, B100);
+$angular-project-accent: mat.m2-define-palette($mat-angular-project-custom, B200);
+$angular-project-warn: mat.m2-define-palette($mat-angular-project-custom, B300);
+
+// Définir les typographies
+$typography: mat.m2-define-typography-config();
+
+// Créer le thème personnalisé avec la palette et la typographie
+$angular-project-theme: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $angular-project-primary,
+      accent: $angular-project-accent,
+      warn: $angular-project-warn,
+    ),
+    typography: $typography,
+  )
+);
+
+// Appliquer le thème aux composants
+@include mat.all-component-themes($angular-project-theme);
